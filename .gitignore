@@ -1,0 +1,9 @@
+node_modules
+dist
+*.log
+logs
+build
+*.env
+doc.txt
+package-lock.json
+Wellheal

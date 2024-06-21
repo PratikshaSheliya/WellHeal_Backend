@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="x-apple-disable-message-reformatting">
+  <!--[if !mso]><!-->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!--<![endif]-->
+  <title></title>
+  <!--[if mso]>
+	<style type="text/css">
+    table {border-collapse:collapse;border:0;border-spacing:0;margin:0;}
+    div, td {padding:0;}
+    div {margin:0 !important;}
+	</style>
+  <noscript>
+    <xml>
+      <o:OfficeDocumentSettings>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml>
+  </noscript>
+  <![endif]-->
+  <style type="text/css">
+    @media screen and (max-width: 350px) {
+      .three-col .column {
+        max-width: 100% !important;
+      }
+    }
+
+    @media screen and (min-width: 351px) and (max-width: 460px) {
+      .three-col .column {
+        max-width: 50% !important;
+      }
+    }
+
+    @media screen and (max-width: 460px) {
+      .two-col .column {
+        max-width: 100% !important;
+      }
+
+      .two-col img {
+        width: 100% !important;
+      }
+    }
+
+    @media screen and (min-width: 461px) {
+      .three-col .column {
+        max-width: 33.3% !important;
+      }
+
+      .two-col .column {
+        max-width: 50% !important;
+      }
+
+      .sidebar .small {
+        max-width: 16% !important;
+      }
+
+      .sidebar .large {
+        max-width: 84% !important;
+      }
+    }
+
+
+    .pagebreak1 {
+      height: 300px;
+    }
+
+    .pagebreak2 {
+      height: 230px;
+    }
+  </style>
+</head>
+
+<body style="margin:0;padding:0;word-spacing:normal;background-color:#ffffff;">
+  <div role="article" aria-roledescription="email" lang="en"
+    style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;background-color:#ffffff;">
+    <table role="presentation" style="width:100%;border:1px;border-spacing:0;">
+      <tr>
+        <td align="center">
+          <!--[if mso]>
+          <table role="presentation" align="center" style="width:660px;">
+          <tr>
+          <td style="padding:20px 0;">
+          <![endif]-->
+          <div class="outer" style="width:96%;max-width:660px;margin:20px auto;">
+
+            <table role="presentation" style="width:100%;border:1;border-spacing:0;">
+              <tr>
+                <td style="padding:10px 10px 20px 10px;font-size:24px;line-height:28px;font-weight:bold;">
+                  <img src="<%=  HOST %>/banner_img.png" width="640" alt="" style="width:100%;height:auto;" />
+                </td>
+              </tr>
+              <tr class="pagebreak1"></tr>
+              <tr>
+                <td style="padding:10px;text-align:left;">
+                  <img src="<%=  HOST %>/section2.png" width="640" alt="" style="width:100%;height:auto;" />
+                </td>
+              </tr>
+              <tr class="pagebreak2"></tr>
+              <tr>
+                <td style="padding:10px 0px;">
+                  <img src="<%=  HOST %>/logo_1.png" alt="" width="500">
+                </td>
+              </tr>
+              <tr>
+                <td style="padding:10px;">
+                  <h3 style="font-weight: bold; color: #ff914d; text-align: center; text-decoration: underline;">How
+                    Mentally Healthy Are You?</h3>
+                  <h4 style="font-weight: bold; color: #ff914d; margin-bottom: 0;">Hi <%= OBJ.NAME %>
+                  </h4>
+                  <p style="font-weight: bold; color: #ff914d; margin-bottom: 0;">Thank you for giving your valuable
+                    time to take this Mental Health Assessment test.</p>
+                </td>
+              </tr>
+
+              <tr>
+                <td style="padding:10px;">
+                  <div class="three-col" style="font-size:0;text-align:center;">
+                    <!--[if mso]>
+                    <table role="presentation" width="100%" style="text-align:center;">
+                    <tr>
+                    <td style="width:220px;padding:10px;" valign="top">
+                    <![endif]-->
+                    <div class="column" style="width:100%;max-width:220px;display:inline-block;vertical-align:top;">
+                      <div style="padding:10px;font-size:14px;line-height:18px;">
+                        <p style="margin-top:0;margin-bottom:10px;"><img src="<%=  HOST %>/g1.png" width="80" alt=""
+                            style="width:80px;max-width:100%;height:auto;" /></p>
+                        <p style="margin:0; font-size: 13px;">
+                          <%= OBJ.FEAR.TEXT %>
+                        </p>
+                      </div>
+                    </div>
+                    <!--[if mso]>
+                    </td>
+                    <td style="width:220px;padding:10px;" valign="top">
+                    <![endif]-->
+                    <div class="column"
+                      style="width:100px;height: 100px;display:inline-block;vertical-align:top;background-color: #57e557; border-radius: 100px 0 0 0;margin: 60px 10px 0 0;">
+                      <div style="padding:30px 0px 10px 15px;font-size:12px;font-weight: bold;color: #ffffff;">
+                        <p style="margin:0;">
+                          <%= OBJ.FEAR.SCORE %>/15<br>
+                            <%= OBJ.FEAR.TITLE %>
+                      </div>
+                    </div>
+                    <div class="column"
+                      style="width:100px;height: 100px;display:inline-block;vertical-align:top; background-color: #ff6bcb; border-radius: 0 100px 0 0; margin: 60px 0px 0 0;">
+                      <div style="padding:30px 13px 10px 0px;font-size:12px;font-weight: bold;color: #ffffff;">
+                        <p style="margin:0;">
+                          <%= OBJ.SMOKING.SCORE %>/15<br>
+                            <%= OBJ.SMOKING.TITLE %>
+                      </div>
+                    </div>
+                    <!--[if mso]>
+                    </td>
+                    <td style="width:220px;padding:10px;" valign="top">
+                    <![endif]-->
+                    <div class="column" style="width:100%;max-width:220px;display:inline-block;vertical-align:top;">
+                      <div style="padding:10px;font-size:14px;line-height:18px;">
+                        <p style="margin-top:0;margin-bottom:10px;"><img src="<%=  HOST %>/g2.png" width="80" alt=""
+                            style="width:80px;max-width:100%;height:auto;" /></p>
+                        <p style="margin:0; font-size: 13px;">
+                          <%= OBJ.SMOKING.TEXT %>
+                        </p>
+                      </div>
+                    </div>
+                    <!--[if mso]>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td style="width:220px;padding:10px;" valign="top">
+                    <![endif]-->
+                    <div class="column" style="width:100%;max-width:220px;display:inline-block;vertical-align:top;">
+                      <div style="padding:10px;font-size:14px;line-height:18px;">
+                        <p style="margin-top:0;margin-bottom:10px;"><img src="<%=  HOST %>/g3.png" width="80" alt=""
+                            style="width:80px;max-width:100%;height:auto;" /></p>
+                        <p style="margin:0; font-size: 13px;">
+                          <%= OBJ.PRANAYAMA.TEXT %>
+                        </p>
+                      </div>
+                    </div>
+                    <!--[if mso]>
+                    </td>
+                    <td style="width:220px;padding:10px;" valign="top">
+                    <![endif]-->
+                    <div class="column"
+                      style="width:100px;height: 100px;display:inline-block;vertical-align:top;background-color: gray; border-radius: 0px 0px 0px 100px; margin-right: 10px;">
+                      <div style="padding:10px 0 30px 20px;font-size:12px;font-weight: bold;color: #ffffff; ">
+                        <p style="margin:0;">
+                          <%= OBJ.PRANAYAMA.SCORE %>/15<br>
+                            <%= OBJ.PRANAYAMA.TITLE %>
+                      </div>
+                    </div>
+                    <div class="column"
+                      style="width:100px;height: 100px;display:inline-block;vertical-align:top;background-color: rgb(209, 81, 209); border-radius: 0px 0px 100px 0px;">
+                      <div style="padding:10px 20px 15px 0;font-size:12px;font-weight: bold;color: #ffffff;">
+                        <p style="margin:0;">
+                          <%= OBJ.MEDITATION.SCORE %>/15<br>
+                            <%= OBJ.MEDITATION.TITLE %>
+                        </p>
+                      </div>
+                    </div>
+                    <!--[if mso]>
+                    </td>
+                    <td style="width:220px;padding:10px;" valign="top">
+                    <![endif]-->
+                    <div class="column" style="width:100%;max-width:220px;display:inline-block;vertical-align:top;">
+                      <div style="padding:10px;font-size:14px;line-height:18px;">
+                        <p style="margin-top:0;margin-bottom:10px;"><img src="<%=  HOST %>/g4.png" width="80" alt=""
+                            style="width:80px;max-width:100%;height:auto;" /></p>
+                        <p style="margin:0; font-size: 13px;">
+                          <%= OBJ.MEDITATION.TEXT %>
+                        </p>
+                      </div>
+                    </div>
+                    <!--[if mso]>
+                    </td>
+                    </tr>
+                    </table>
+                    <![endif]-->
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td style="padding:10px;">
+                  <img src="<%=  HOST %>/last_section 1.png" alt="" width="630px">
+                </td>
+              </tr>
+
+            </table>
+        </td>
+      </tr>
+      </tr>
+    </table>
+  </div>
+</body>
+
+</html>
