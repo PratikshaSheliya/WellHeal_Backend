@@ -25,14 +25,15 @@ export const makePayment = async (req, res) => {
             let is_trial_running= user[0]?.is_trial_running;
 
 
-            if(!customerId) {
-                return okResponse(res, messages.payment_attach_fail);
-            }
+            // if(!customerId) {
+            //     return okResponse(res, messages.payment_attach_fail);
+            // }
 
-            if (!data.paymentMethodId) {
-                logger.log(level.info, 'makePayment payment_method found error');
-                return paramMissingError(res, messages.missing_key.replace("{dynamic}", "payment_method"));
-            }
+            // if (!data.paymentMethodId) {
+            //     logger.log(level.info, 'makePayment payment_method found error');
+            //     return paramMissingError(res, messages.missing_key.replace("{dynamic}", "payment_method"));
+            // }
+            
             if (!data.priceId) {
                 logger.log(level.info, 'makePayment priceId found error');
                 return paramMissingError(res, messages.missing_key.replace("{dynamic}", "priceId"));
@@ -469,33 +470,33 @@ export const makePayment = async (req, res) => {
                             };
                             
                             await Payment.add(payload);                            
-                        /* const price = await stripe.prices.retrieve(data.priceId);
+                            /* const price = await stripe.prices.retrieve(data.priceId);
 
-                            if (price) {
-                                const product = await stripe.products.retrieve(price.product);
-                                const productName = product.name;
-                            
-                                const startDate = new Date(); // Use the current date as the start date
-                            
-                                let endDate = new Date(startDate);
-                            
-                                if (price.recurring) {
-                                    const interval = price.recurring.interval;
-                                    const intervalCount = price.recurring.interval_count || 1;
+                                if (price) {
+                                    const product = await stripe.products.retrieve(price.product);
+                                    const productName = product.name;
+                                
+                                    const startDate = new Date(); // Use the current date as the start date
+                                
+                                    let endDate = new Date(startDate);
+                                
+                                    if (price.recurring) {
+                                        const interval = price.recurring.interval;
+                                        const intervalCount = price.recurring.interval_count || 1;
 
-                                    if (interval === "day") {
-                                        endDate.setDate(endDate.getDate() + intervalCount);
-                                    } else if (interval === "week") {
-                                        endDate.setDate(endDate.getDate() + intervalCount * 7);
-                                    } else if (interval === "month") {
-                                        endDate.setMonth(endDate.getMonth() + intervalCount);
-                                    } else if (interval === "year") {
-                                        endDate.setFullYear(endDate.getFullYear() + intervalCount);
+                                        if (interval === "day") {
+                                            endDate.setDate(endDate.getDate() + intervalCount);
+                                        } else if (interval === "week") {
+                                            endDate.setDate(endDate.getDate() + intervalCount * 7);
+                                        } else if (interval === "month") {
+                                            endDate.setMonth(endDate.getMonth() + intervalCount);
+                                        } else if (interval === "year") {
+                                            endDate.setFullYear(endDate.getFullYear() + intervalCount);
+                                        }
                                     }
-                                }
-                            } else {
-                                return paramMissingError(res, messages.replace("{dynamic}", "Price Not Found"));
-                            } */
+                                } else {
+                                    return paramMissingError(res, messages.replace("{dynamic}", "Price Not Found"));
+                                } */
 
                             const response = {
                                 setupIntent:setupIntent,
@@ -778,17 +779,17 @@ export const getAllPriceList = async (req,res) => {
     try {
             //NEW CODE
             const products = await stripe.products.list({ limit:100, active: true });
-
             const productList = await Promise.all(
-            products.data.map(async (product) => {
-                const prices = await stripe.prices.list({ product: product.id,active: true });
-                prices?.data?.forEach(item => {
-                    item.unit_amount = item.unit_amount / 100
-                });
-                product.prices = prices.data;
-                return product;
-            }),
+                products.data.map(async (product) => {
+                    const prices = await stripe.prices.list({ product: product.id,active: true });
+                    prices?.data?.forEach(item => {
+                        item.unit_amount = item.unit_amount / 100
+                    });
+                    product.prices = prices.data;
+                    return product;
+                }),
             );
+            // console.log("products ==> ", productList)
             return okResponseDiff(res, messages.record_fetched, productList);
 
     } catch (error) {

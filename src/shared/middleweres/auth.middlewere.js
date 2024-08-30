@@ -65,12 +65,15 @@ export const authMiddleware = async (req, res, next) => {
     }
 
     const authorization = req.headers[AUTHORIZATION_HEADER_NAME];
+    // console.log("authorization ===> ", authorization);
     if (authorization) {
         let token = authorization.split(tokenSplitBy);
+        // console.log("token ===> ", token)
         let length = token.length;
         if (length == tokenLength) {
             let accessToken = token[1];
             try {
+                // console.log("accessToken ===> ", accessToken);
                 let decoded = await auth.verifyToken(accessToken);
                 logger.log(level.debug, `authMiddleware decoded=${JSON.stringify(decoded)}`);
                 const email = decoded.email;
@@ -98,6 +101,8 @@ export const authMiddleware = async (req, res, next) => {
 
 export const verifyMiddleware = async (req, res, next) => {
     const verifyToken = req.headers[VERIFICATION_HEADER_NAME];
+    // console.log("verifyToken ==> ", verifyToken)
+    // console.log("verifyToken ==> ", constants.VERIFICATION_TOKEN)
     if (verifyToken != constants.VERIFICATION_TOKEN) {
         logger.log(level.error, `verifyMiddleware missing verification header error`);
         return unauthorizedError(res, 'Invalid or Missing Static Token')

@@ -7,9 +7,11 @@ import { decrypt } from "./../../utils/utility.js";
 class JWTAuth {
   async createToken(email, userId = null) {
     return new Promise((resolve, reject) => {
-      const exp =
-        Math.floor(Date.now() / 1000) +
-        60 * 60 * (24 * constants.TOKEN_EXPIRES_IN_DAY); // 1 day
+      // const exp =
+      //   Math.floor(Date.now() / 1000) +
+      //   60 * 60 * (24 * constants.TOKEN_EXPIRES_IN_DAY); // 1 day
+
+      const exp = Math.floor(Date.now() / 1000) + (60 * 60 * 24 * 365); // 365 days
       const payload = {
         email: email,
         userId,
@@ -51,6 +53,7 @@ class JWTAuth {
     return new Promise((resolve, reject) => {
       try {
         let secret = process.env.JWT_TOKEN_SECRET;
+        console.log("secret ************ ", secret)
         const decoded = jwt.verify(accessToken, secret);
         resolve(decoded);
       } catch (err) {
